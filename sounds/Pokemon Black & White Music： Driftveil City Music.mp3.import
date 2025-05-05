@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d15v3bcg2b3o8"
+path="res://.godot/imported/Pokemon Black & White Music： Driftveil City Music.mp3-ddd9c450d5ddffba00c85e4de61fa1f5.mp3str"
+
+[deps]
+
+source_file="res://Assets Super Mario Bros/sounds/Pokemon Black & White Music： Driftveil City Music.mp3"
+dest_files=["res://.godot/imported/Pokemon Black & White Music： Driftveil City Music.mp3-ddd9c450d5ddffba00c85e4de61fa1f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

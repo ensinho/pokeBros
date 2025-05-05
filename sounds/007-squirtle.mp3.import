@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7kge2c4f4e0x"
+path="res://.godot/imported/007-squirtle.mp3-2ce7c62355d9a72d8b7a727e0f2d0bbc.mp3str"
+
+[deps]
+
+source_file="res://Assets Super Mario Bros/sounds/007-squirtle.mp3"
+dest_files=["res://.godot/imported/007-squirtle.mp3-2ce7c62355d9a72d8b7a727e0f2d0bbc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

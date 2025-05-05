@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c02tftjukxdkl"
+path="res://.godot/imported/12_3 (2).mp3-df6d722b78ecee8e18844c280cda210a.mp3str"
+
+[deps]
+
+source_file="res://Assets Super Mario Bros/sounds/12_3 (2).mp3"
+dest_files=["res://.godot/imported/12_3 (2).mp3-df6d722b78ecee8e18844c280cda210a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

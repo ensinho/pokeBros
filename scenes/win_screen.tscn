@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b82nebsras8gp"]
+
+[ext_resource type="Script" path="res://scenes/win_screen.gd" id="1_02bxu"]
+[ext_resource type="FontFile" uid="uid://dm3ch1vmt4ixr" path="res://Assets Super Mario Bros/Fonts/font.ttf" id="1_jn6a8"]
+[ext_resource type="Texture2D" uid="uid://s8b1l1ijvtg1" path="res://Assets Super Mario Bros/lapras sprites/laprasMenu4.png" id="2_j56bh"]
+[ext_resource type="AudioStream" uid="uid://dpby67lmo6mp5" path="res://Assets Super Mario Bros/sounds/129-received-an-item.mp3" id="4_jjiv4"]
+
+[node name="WinScreen" type="CanvasLayer"]
+script = ExtResource("1_02bxu")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Wintext" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 123.0
+offset_right = 861.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("1_jn6a8")
+theme_override_font_sizes/font_size = 64
+text = "Vitória na certa!"
+
+[node name="Restart" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 276.0
+offset_right = 706.0
+offset_bottom = 343.0
+theme_override_fonts/font = ExtResource("1_jn6a8")
+theme_override_font_sizes/font_size = 48
+text = "Reiniciar?"
+
+[node name="Voltar ao menu" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 395.0
+offset_right = 755.0
+offset_bottom = 462.0
+theme_override_fonts/font = ExtResource("1_jn6a8")
+theme_override_font_sizes/font_size = 48
+text = "Voltar ao menu"
+
+[node name="LaprasMenu4" type="Sprite2D" parent="Label"]
+show_behind_parent = true
+position = Vector2(576, 327.5)
+scale = Vector2(1.4425, 1.46)
+texture = ExtResource("2_j56bh")
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jjiv4")
+
+[connection signal="pressed" from="Label/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Label/Voltar ao menu" to="." method="_on_voltar_ao_menu_pressed"]

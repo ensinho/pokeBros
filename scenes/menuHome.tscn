@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx4l22hifeawl"]
+
+[ext_resource type="Script" path="res://scenes/menu_home.gd" id="1_kufx0"]
+[ext_resource type="FontFile" uid="uid://dm3ch1vmt4ixr" path="res://Assets Super Mario Bros/Fonts/font.ttf" id="1_pdeil"]
+[ext_resource type="Texture2D" uid="uid://cqbgugmmyrx1h" path="res://Assets Super Mario Bros/lapras sprites/laprasMenu2.jpg" id="3_d7gux"]
+[ext_resource type="AudioStream" uid="uid://cawsudrisp5w0" path="res://Assets Super Mario Bros/sounds/Seagull Beach Sound Effect _ Free Sound Clips _ Animal Sounds.mp3" id="4_nqf36"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_kufx0")
+
+[node name="Label2" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 163.0
+offset_right = 884.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("1_pdeil")
+theme_override_font_sizes/font_size = 64
+text = "Super Poké Bros !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Label2"]
+top_level = true
+layout_mode = 0
+offset_left = 453.0
+offset_top = 331.0
+offset_right = 736.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("1_pdeil")
+theme_override_font_sizes/font_size = 48
+text = "Iniciar Jogo"
+
+[node name="LaprasMenu2" type="Sprite2D" parent="Label2"]
+show_behind_parent = true
+position = Vector2(578.5, 324)
+scale = Vector2(1.56658, 1.42105)
+texture = ExtResource("3_d7gux")
+
+[node name="menuTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nqf36")
+volume_db = -3.089
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Label2/Button" to="." method="_on_button_pressed"]

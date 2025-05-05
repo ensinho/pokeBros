@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2kky8qgs758k"]
+
+[ext_resource type="Script" path="res://scenes/squirtle.gd" id="1_spmma"]
+[ext_resource type="Texture2D" uid="uid://c01pvjf77podd" path="res://Assets Super Mario Bros/Sprites/squirtleWalk1.png" id="1_wvbl3"]
+[ext_resource type="Texture2D" uid="uid://d1snfcsol1k3" path="res://Assets Super Mario Bros/Sprites/squirtleShell.png" id="1_y0jqj"]
+[ext_resource type="Texture2D" uid="uid://b1sj4iikpgv6d" path="res://Assets Super Mario Bros/Sprites/squirtleWalk2.png" id="2_0y15h"]
+[ext_resource type="Texture2D" uid="uid://c17wrcp0v0bls" path="res://Assets Super Mario Bros/Sprites/squirtleWalk3.png" id="3_ylepa"]
+[ext_resource type="AudioStream" uid="uid://7kge2c4f4e0x" path="res://Assets Super Mario Bros/sounds/007-squirtle.mp3" id="7_gypxm"]
+[ext_resource type="Shape2D" uid="uid://dp0l37r1fkoxt" path="res://resources/collisionShapes/squirtle_full.tres" id="7_ly8bw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4cyhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y0jqj")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wvbl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0y15h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ylepa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Squirtle" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_spmma")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.25)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_4cyhc")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 11)
+collision_mask = 18
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = ExtResource("7_ly8bw")
+
+[node name="SquirtleCry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_gypxm")
+volume_db = -21.571
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drjggmh673q7v"
+path="res://.godot/imported/Pokemon Cries - #591 Amoongus.mp3-a1890cb5be6b78d216e4d06bdcb54fde.mp3str"
+
+[deps]
+
+source_file="res://Assets Super Mario Bros/sounds/Pokemon Cries - #591 Amoongus.mp3"
+dest_files=["res://.godot/imported/Pokemon Cries - #591 Amoongus.mp3-a1890cb5be6b78d216e4d06bdcb54fde.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

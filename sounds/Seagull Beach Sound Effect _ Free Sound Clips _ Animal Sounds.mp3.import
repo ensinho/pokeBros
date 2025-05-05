@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cawsudrisp5w0"
+path="res://.godot/imported/Seagull Beach Sound Effect _ Free Sound Clips _ Animal Sounds.mp3-db4d182c8ce55678d4734343bc7bf363.mp3str"
+
+[deps]
+
+source_file="res://Assets Super Mario Bros/sounds/Seagull Beach Sound Effect _ Free Sound Clips _ Animal Sounds.mp3"
+dest_files=["res://.godot/imported/Seagull Beach Sound Effect _ Free Sound Clips _ Animal Sounds.mp3-db4d182c8ce55678d4734343bc7bf363.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

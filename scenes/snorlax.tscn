@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8flk1ff4v0ii"]
+
+[ext_resource type="Texture2D" uid="uid://b18k0nnwydahj" path="res://Assets Super Mario Bros/Sprites/sleepingSnorlax2-removebg-preview.png" id="1_ojxdv"]
+[ext_resource type="Script" path="res://scenes/snorlax.gd" id="1_to1ev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it3da"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ojxdv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4idin"]
+radius = 67.0
+height = 134.0
+
+[node name="Snorlax" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_to1ev")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(293, 311.5)
+scale = Vector2(0.5, 0.439)
+sprite_frames = SubResource("SpriteFrames_it3da")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(289, 318)
+shape = SubResource("CapsuleShape2D_4idin")

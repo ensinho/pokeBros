@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://cndamh2mjd12l"]
+
+[ext_resource type="Texture2D" uid="uid://dl0kuv8e1o6n3" path="res://Assets Super Mario Bros/Sprites/Goomba_Flat.png" id="1_c73g7"]
+[ext_resource type="Script" path="res://scenes/goomba.gd" id="1_h5cw1"]
+[ext_resource type="Texture2D" uid="uid://qlvmxq1ip6oc" path="res://Assets Super Mario Bros/Sprites/amoongus01.png" id="3_cjmja"]
+[ext_resource type="Texture2D" uid="uid://b45pourhe04e0" path="res://Assets Super Mario Bros/Sprites/amoongus1.png" id="4_uw1y5"]
+[ext_resource type="Texture2D" uid="uid://2ts4by6pv741" path="res://Assets Super Mario Bros/Sprites/amoongus2.png" id="5_nkrx8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtntk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c73g7")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cjmja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uw1y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nkrx8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh8qn"]
+size = Vector2(23, 22.38)
+
+[node name="Goomba" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_h5cw1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_jtntk")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -3.81)
+shape = SubResource("RectangleShape2D_gh8qn")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+collision_mask = 18
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, -3)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
